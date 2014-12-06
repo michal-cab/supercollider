@@ -1,3 +1,4 @@
+// novy coment - test
 s.boot
 
 // "techno" synth.
