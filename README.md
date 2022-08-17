@@ -1,3 +1,4 @@
 supercollider snippets
-appearing throug time
+as they are
+appearing throug the time
 of slow learning
