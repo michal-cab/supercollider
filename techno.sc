@@ -14,7 +14,9 @@ SynthDef(\techno_synth, {
 			  arg count;
 			  var harm;
 			  harm = count + 1 * modfrq; // 40 - 700
-			  SinOsc.ar(freq + harm, mul: max([0,0], SinOsc.ar(count + 1 * modamp))) * 1/(count+1);
+			  SinOsc.ar(freq: Lag.kr(freq + harm, 0.2), // ???
+				         mul: max([0,0],SinOsc.ar(count + 1 * modamp))) // ???
+			             * 1/(count+1); //normalized amplitude according iteration
 	}));
 	env = EnvGen.ar(Env.new(
 		levels: [0, 1, 0],
@@ -41,5 +43,8 @@ Synth(\techno_synth, [modfrq: 250, modamp: -6, sus: 3]);
 //car.freq
 Synth(\techno_synth, [freq: 400, modfrq: 50, modamp: -3]);
 Synth(\techno_synth, [freq: 600, modfrq: 80, modamp: 6]);
+
+Synth(\techno_synth, [freq: 400, modfrq: 260, modamp: 4, sus: 3]);
+Synth(\techno_synth, [freq: 200, modfrq: 250, modamp: -6, sus: 3]);
 
 //todo: add Pbind
