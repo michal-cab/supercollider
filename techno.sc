@@ -10,7 +10,7 @@ SynthDef(\techno_synth, {
 	arg freq = 0, modfrq, modamp, sus=0.5; // alt. control with MouseX / MouseY
 	var sig, env;
 	sig = Mix.ar(
-		  Array.fill(120, {
+		  Array.fill(50, {
 			  arg count;
 			  var harm;
 			  harm = count + 1 * modfrq; // 40 - 700
